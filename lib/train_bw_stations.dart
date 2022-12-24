@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -23,14 +25,14 @@ class _TrainDataState extends State<TrainData> {
       "toStationCode" : widget.journeyEnd,
     };
     http.Response response;
-    response = await http.get(Uri.https('irctc1.p.rapidapi.com', '/api/v2/trainBetweenStations', mapdata1), headers: {
-      "X-RapidAPI-Key": "b9dcd93668msh845190a4a47e113p1289cajsn083f6026f6db",
-      "X-RapidAPI-Host": "irctc1.p.rapidapi.com",});
+
+     response = await http.get(Uri.https('irctc1.p.rapidapi.com', '/api/v2/trainBetweenStations', mapdata1), headers: {
+       "X-RapidAPI-Key": "b9dcd93668msh845190a4a47e113p1289cajsn083f6026f6db",
+       "X-RapidAPI-Host": "irctc1.p.rapidapi.com",});
     if (response.statusCode == 200) {
       setState(() {
         mapResponse = json.decode(response.body);
         listResponse = mapResponse['data'];
-        print(listResponse);
       });
     }
   }

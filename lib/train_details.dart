@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 
+// ignore: must_be_immutable
 class TrainDetails extends StatefulWidget {
   TrainDetails({super.key, required this.trainNo});
 
@@ -26,7 +27,7 @@ class _TrainDetailsState extends State<TrainDetails> {
       "trainNo" : widget.trainNo,
     };
     http.Response response;
-    Uri uri = Uri.https('irctc1.p.rapidapi.com','api/v1/getTrainSchedule',mapdat2);
+    Uri uri = Uri.https('irctc1.p.rapidapi.com','/api/v1/getTrainSchedule',mapdat2);
     response = await http.get(uri, headers: {
       "X-RapidAPI-Key": "b9dcd93668msh845190a4a47e113p1289cajsn083f6026f6db",
       "X-RapidAPI-Host": "irctc1.p.rapidapi.com",});
