@@ -38,6 +38,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.5
   firebase_core: any
+  pinput: ^2.2.21
+  flutter_riverpod: ^2.1.3
+  image_picker: ^0.8.5+3
+
+
+
 
   # Google Sign In
   firebase_auth: ^4.2.3
@@ -45,9 +51,8 @@ dependencies:
 
   # Google Icon
   font_awesome_flutter: ^10.3.0
+  firebase_database: ^10.0.9
 
-  # State Management
-  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:

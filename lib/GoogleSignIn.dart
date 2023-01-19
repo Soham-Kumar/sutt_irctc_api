@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'auth_service.dart';
 
 class Login extends StatelessWidget {
@@ -43,21 +42,42 @@ class Login extends StatelessWidget {
                     'Google Sign in',
                   style: TextStyle(color: Colors.black, fontSize: 18),
                 ),
+              ),
+            ),
 
-              ),
-            ),
-            MaterialButton(
-              padding: const EdgeInsets.all(12),
-              color: Colors.greenAccent[400],
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-              child: const Text(
-                'Log Out',
-                style: TextStyle(color: Colors.black, fontSize: 18),
-              ),
-              onPressed: () {
-                AuthService().signOut();
-              },
-            ),
+
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: MaterialButton(
+            //     padding: const EdgeInsets.all(12),
+            //     color: Colors.greenAccent[400],
+            //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            //     child: const Text(
+            //       'Log Out',
+            //       style: TextStyle(color: Colors.black, fontSize: 18),
+            //     ),
+            //     onPressed: () {
+            //       AuthService().signOut();
+            //     },
+            //   ),
+            // ),
+
+
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: MaterialButton(
+            //     padding: const EdgeInsets.all(12),
+            //     color: Colors.greenAccent[400],
+            //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            //     child: const Text(
+            //       'Sign In With Phone Number',
+            //       style: TextStyle(color: Colors.black, fontSize: 18),
+            //     ),
+            //     onPressed: () {
+            //       AuthService().signInWithPhone();
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),

@@ -47,10 +47,16 @@ class _TrainDataState extends State<TrainData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.black38,
         appBar: AppBar(
           title: const Text(
             'Trains Available',
-            style: TextStyle(color: Colors.black, fontSize: 24),
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          leading: IconButton(
+            onPressed: () {
+            },
+            icon: const Icon(Icons.bookmark, color: Colors.white,),
           ),
           titleSpacing: 00.0,
           centerTitle: true,
@@ -62,25 +68,25 @@ class _TrainDataState extends State<TrainData> {
                 bottomLeft: Radius.circular(25)),
           ),
           elevation: 5.00,
-          backgroundColor: Colors.greenAccent[400],
+          backgroundColor: Colors.black38,
         ),
         body: SafeArea(
           child: ListView.builder(itemBuilder: (context, index){
             return Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                height: 200,
+                height: 180,
                 child: Card(
-
-                  color: Colors.greenAccent[400],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
+                  color: Colors.white,
+                  // shape: RoundedRectangleBorder(
+                  //   borderRadius: BorderRadius.circular(30.0),
+                  // ),
                   child: Column(
                     children: [
                       Container(
-                          padding: const EdgeInsets.fromLTRB(30.0,30.0,30.0,0.0),
+                          padding: const EdgeInsets.fromLTRB(20.0,10.0,20.0,0.0),
                           child: Column(
+                            
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
@@ -90,24 +96,24 @@ class _TrainDataState extends State<TrainData> {
                                     const Text(
                                       "Train Number : ",
                                       textAlign: TextAlign.left,
-                                      style: TextStyle(color: Colors.black, fontSize: 20),
+                                      style: TextStyle(color: Colors.black, fontSize: 16),
                                     ),
                                     Text(
                                       listResponse[index]['train_number'].toString(),
                                       textAlign: TextAlign.left,
-                                      style: const TextStyle(color: Colors.black, fontSize: 20),
+                                      style: const TextStyle(color: Colors.black, fontSize: 16),
                                     ),
                                   ],
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(0.0, 5.0, 8.0, 8.0),
+                                padding: const EdgeInsets.fromLTRB(0.0, 5.0, 8.0, 0.0),
                                 child: Row(
                                   children: [
                                     const Text(
                                       "Train Name : ",
                                       textAlign: TextAlign.left,
-                                      style: TextStyle(color: Colors.black, fontSize: 20),
+                                      style: TextStyle(color: Colors.black, fontSize: 16),
                                     ),
                                     Expanded(
                                       child: SingleChildScrollView(
@@ -115,7 +121,7 @@ class _TrainDataState extends State<TrainData> {
                                         child: Text(
                                           listResponse[index]['train_name'].toString(),
                                           textAlign: TextAlign.left,
-                                          style: const TextStyle(color: Colors.black, fontSize: 20),
+                                          style: const TextStyle(color: Colors.black, fontSize: 16),
                                         ),
                                       ),
                                     ),
@@ -125,25 +131,21 @@ class _TrainDataState extends State<TrainData> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  Padding(
-                                      padding: const EdgeInsets.fromLTRB(0.0, 5.0, 8.0, 0.0),
-                                      child:
-                                      MaterialButton(
-                                        padding: const EdgeInsets.all(12),
-                                        color: Colors.yellow,
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                                        onPressed: (){
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) => TrainDetails(trainNo: listResponse[index]['train_number'] ),
-                                              ));
-                                        },
-                                        child: const Text(
-                                          "Get Details",
-                                          style: TextStyle(color: Colors.black, fontSize: 14),
-                                        ),
-                                      )
+                                  MaterialButton(
+                                    padding: const EdgeInsets.all(6),
+                                    color: Colors.white54,
+                                    // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                                    onPressed: (){
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => TrainDetails(trainNo: listResponse[index]['train_number'] ),
+                                          ));
+                                    },
+                                    child: const Text(
+                                      "Get Details",
+                                      style: TextStyle(color: Colors.black, fontSize: 14),
+                                    ),
                                   ),
                                 ],
                               ),
