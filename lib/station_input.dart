@@ -22,7 +22,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: ChangeNotifierProvider(
-        create: (_) => ProfileController,
+        create: (_) => ProfileController(),
     child: Consumer(
     builder: (context, provider, child){
     return Scaffold(
