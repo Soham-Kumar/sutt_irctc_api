@@ -1,5 +1,5 @@
 // ignore_for_file: must_be_immutable
-
+import 'train_bookmarks.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -53,11 +53,15 @@ class _TrainDataState extends State<TrainData> {
             'Trains Available',
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
-          leading: IconButton(
-            onPressed: () {
-            },
-            icon: const Icon(Icons.bookmark, color: Colors.white,),
-          ),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.bookmark),
+              tooltip: 'Train Bookmarks',
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const Bookmarks()),);
+              },
+            ), //IconButton
+          ],
           titleSpacing: 00.0,
           centerTitle: true,
           toolbarHeight: 60.2,
@@ -75,7 +79,7 @@ class _TrainDataState extends State<TrainData> {
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                height: 180,
+                height: 130,
                 child: Card(
                   color: Colors.white,
                   // shape: RoundedRectangleBorder(
@@ -134,7 +138,6 @@ class _TrainDataState extends State<TrainData> {
                                   MaterialButton(
                                     padding: const EdgeInsets.all(6),
                                     color: Colors.white54,
-                                    // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                                     onPressed: (){
                                       Navigator.push(
                                           context,

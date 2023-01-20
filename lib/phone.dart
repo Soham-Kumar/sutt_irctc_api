@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-// import 'otp.dart';
+
 
 class MyPhone extends StatefulWidget {
   static String verify = "";
@@ -9,6 +9,7 @@ class MyPhone extends StatefulWidget {
   @override
   State<MyPhone> createState() => _MyPhoneState();
 }
+
 
 class _MyPhoneState extends State<MyPhone> {
   TextEditingController countryController = TextEditingController();
@@ -28,17 +29,15 @@ class _MyPhoneState extends State<MyPhone> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Image.asset(
-              //   'default-avatar.png',
-              //   width: 150,
-              //   height: 150,
-              // ),
               const SizedBox(
                 height: 25,
               ),
               const Text(
                 "Phone Verification",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                ),
               ),
               const SizedBox(
                 height: 10,
@@ -47,6 +46,7 @@ class _MyPhoneState extends State<MyPhone> {
                 "We need to register your phone number",
                 style: TextStyle(
                   fontSize: 16,
+                  color: Colors.white,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -67,8 +67,9 @@ class _MyPhoneState extends State<MyPhone> {
                     SizedBox(
                       width: 40,
                       child: TextField(
+                        style: const TextStyle(color: Colors.white),
                         controller: countryController,
-                        keyboardType: TextInputType.number,
+                        keyboardType: TextInputType.phone,
                         decoration: const InputDecoration(
                           border: InputBorder.none,
                         ),
@@ -76,7 +77,7 @@ class _MyPhoneState extends State<MyPhone> {
                     ),
                     const Text(
                       "|",
-                      style: TextStyle(fontSize: 33, color: Colors.grey),
+                      style: TextStyle(fontSize: 25, color: Colors.grey),
                     ),
                     const SizedBox(
                       width: 10,
@@ -86,10 +87,14 @@ class _MyPhoneState extends State<MyPhone> {
                           onChanged: (String value) async {
                             phone = value;
                           },
+                          style: const TextStyle(color: Colors.white),
+                          cursorColor: Colors.white,
                           keyboardType: TextInputType.phone,
                           decoration: const InputDecoration(
                             border: InputBorder.none,
-                            hintText: "Phone",
+                            hintText: "Enter your Phone",
+                            // labelText: "Phone",
+                            labelStyle: TextStyle(color: Colors.grey),
                           ),
                         ))
                   ],
@@ -118,7 +123,12 @@ class _MyPhoneState extends State<MyPhone> {
                         codeAutoRetrievalTimeout: (String verificationId) {},
                       );
                     },
-                    child: const Text("Send OTP")),
+                    child: const Text("Send OTP",
+                        style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                    ),),
+                ),
               )
             ],
           ),

@@ -52,6 +52,9 @@ dependencies:
   # Google Icon
   font_awesome_flutter: ^10.3.0
   firebase_database: ^10.0.9
+  provider: ^6.0.5
+  firebase_storage: ^11.0.10
+  basic_utils: ^5.4.2
 
 
 dev_dependencies:
@@ -77,8 +80,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

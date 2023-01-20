@@ -28,7 +28,7 @@ class _MyOtpState extends State<MyOtp> {
           onPressed: () {
             Navigator.pop(context) ;
           },
-          icon: const Icon(Icons.arrow_back, color: Colors.black,),
+          icon: const Icon(Icons.arrow_back, color: Colors.white,),
         ),
       ),
       body: Container(
@@ -48,7 +48,7 @@ class _MyOtpState extends State<MyOtp> {
               ),
               const Text(
                 "Phone Verification",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
               ),
               const SizedBox(
                 height: 10,
@@ -57,6 +57,7 @@ class _MyOtpState extends State<MyOtp> {
                 "Please enter the OTP you received in your messages.",
                 style: TextStyle(
                   fontSize: 16,
+                  color: Colors.white
                 ),
                 textAlign: TextAlign.center,
               ),

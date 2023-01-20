@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'journey_bookmark.dart';
+
 
 // ignore: must_be_immutable
 class TrainDetails extends StatefulWidget {
@@ -51,10 +53,21 @@ class _TrainDetailsState extends State<TrainDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black38,
       appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.bookmark),
+            tooltip: 'Train Bookmarks',
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const TrainBookmarks()),);
+
+            },
+          ), //IconButton
+        ],
         title: const Text(
           'Train Details',
-          style: TextStyle(color: Colors.black, fontSize: 24),
+          style: TextStyle(color: Colors.white, fontSize: 24),
         ),
         titleSpacing: 00.0,
         centerTitle: true,
@@ -66,19 +79,16 @@ class _TrainDetailsState extends State<TrainDetails> {
               bottomLeft: Radius.circular(25)),
         ),
         elevation: 5.00,
-        backgroundColor: Colors.greenAccent[400],
+        backgroundColor: Colors.black,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView.builder(itemBuilder: (context, index){
           String str;
           return Card(
-            color: Colors.greenAccent[400],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
-            ),
+            color: Colors.white,
             child: Padding(
-              padding: const EdgeInsets.all(28.0),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
                   Row(
@@ -105,11 +115,15 @@ class _TrainDetailsState extends State<TrainDetails> {
                         textAlign: TextAlign.left,
                         style: TextStyle(color: Colors.black, fontSize: 16),
                       ),
-                      Text(
-                        listResponse1[index]['station_name'].toString(),
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: const TextStyle(color: Colors.black, fontSize: 16),
+                      Expanded(
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Text(
+                            listResponse1[index]['station_name'].toString(),
+                            textAlign: TextAlign.left,
+                            style: const TextStyle(color: Colors.black, fontSize: 16),
+                          ),
+                        ),
                       ),
                     ],
                   ),

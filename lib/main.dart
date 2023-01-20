@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.black, //<-- SEE HERE
+        scaffoldBackgroundColor: Colors.black12, //<-- SEE HERE
       ),
       initialRoute: 'phone',
       routes: {'phone' : (context) => const MyPhone(),
